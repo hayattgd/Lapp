@@ -1,7 +1,12 @@
 const md = document.getElementById("markdown")
 
 const urlParams = new URLSearchParams(window.location.search);
-const fileName = urlParams.get('p');
+var fileName = urlParams.get('p');
+const courseName = urlParams.get('c');
+
+if (courseName) {
+  fileName = `course/${courseName}/${fileName}`
+}
 
 if (fileName) {
   fetch(`Pages/${fileName}.md`)

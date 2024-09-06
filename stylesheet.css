@@ -29,7 +29,7 @@ body {
   height: 70px;
 }
 
-.Tabs a {
+.Tabs * {
   padding: 18px 18px;
   font-size: 24px;
   font-weight: bold;
@@ -37,11 +37,90 @@ body {
 
 .Content {
   padding: 16px 32px;
-  overflow-y: scroll;
+  overflow-y: auto;
   margin-bottom: 70px;
+  flex: 1;
+}
+
+.Tabs *:any-link {
+  text-decoration: none;
+  color: #fff;
 }
 
 :any-link {
-  text-decoration: none;
   color: #fff;
+}
+
+/* Markdown */
+.Content p {
+  font-size: 16px;
+  padding-top: 14px;
+}
+
+.Content blockquote {
+  margin: 17px;
+  padding: 0px 12px;
+  border-left-color: #ffffff65;
+  border-left-width: 8px;
+  border-left-style: solid;
+}
+
+.Content div.important {
+  padding: 18px;
+  font-size: 17px;
+  background-color: #3aaa5051;
+  border-radius: 16px;
+}
+
+.Content h1, .Content h2 {
+  border-bottom-color: #ffffff6e;
+  border-bottom-style: solid;
+  padding: 6px 14px;
+  margin-bottom: 12px;
+}
+
+.Content h1 {
+  border-bottom-width: 5px;
+}
+
+.Content h2 {
+  border-bottom-width: 2px;
+}
+
+.Content h3 {
+  text-decoration-style: solid;
+  text-decoration-line: underline;
+  text-decoration-color: #ffffff93;
+}
+
+/* Wide screen stylesheet */
+@media screen and (min-width: 960px) {
+  .Tabs {
+    position: relative;
+    border-right-color: #fff;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-top-style: none;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100vh;
+  }
+
+  .Tabs a {
+    padding: 18px 0px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .Content {
+    margin-bottom: 0px;
+    width: 100%;
+  }
+
+  body {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
 }
